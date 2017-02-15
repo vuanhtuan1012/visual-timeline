@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>VU Anh Tuan - Select Keyframe Method</title>
+    <script type="text/javascript" src="skf.js"></script>
+    <style>
+        #container{
+            float: left;
+            width: 655px;
+            height: 360px;
+            overflow: auto;
+        }
+        button{
+            text-align: center;
+            vertical-align: middle;
+            background-color: #60A917;
+            color: #FFFFFF;
+            border: 1px #FFFFFF solid;
+            border-radius: 0;
+            cursor: pointer;
+            display: inline-block;
+            outline: none;
+            font-family: sans-serif;
+            font-size: 14px;
+            line-height: 16px;
+            padding: 10px;
+            display: inline-block;
+            position: absolute;
+            opacity: 0.8;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div style="float: left; margin-right: 5px;">
+        <video id="video" width="640" height="360" controls autobuffer onloadeddata="initialize();">
+            <source src="ct640.ogg">
+        </video>
+        <div style="text-align: center;">
+            Chose video file:<br>
+            <select id="vfile" autocomplete="off" onchange="changeVideo();">
+                <option value="ct640.ogg">ct640.ogg</option>
+                <option value="bmw.mp4">bmw.mp4</option>
+                <option value="ct320.ogg">ct320.ogg</option>
+            </select>
+        </div>
+        <button id="selFrame" onclick="captureFrame();"><span>SELECT FRAME</span></button>
+    </div>
+    <div style="float: left;text-align: center;">
+        <div id="container">
+            <canvas id="nav" width="640" height="360"></canvas>
+        </div>
+        <br>
+        <span id="ptitle"></span>
+    </div>
+
+</body>
+</html>

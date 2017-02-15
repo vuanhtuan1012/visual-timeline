@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>VU Anh Tuan - Advanced Video Player</title>
+    <script type="text/javascript" src="avp.js"></script>
+    <style>
+        #container{
+            float: left;
+            width: 655px;
+            height: 360px;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <div style="float: left; margin-right: 5px;">
+        <video id="video" width="640" height="360" controls autobuffer onloadeddata="initialize();">
+            <source src="ct640.ogg">
+        </video>
+        <div style="text-align: center;">
+            Chose video file:<br>
+            <select id="vfile" autocomplete="off" onchange="changeVideo();">
+                <option value="ct640.ogg">ct640.ogg</option>
+                <option value="bmw.mp4">bmw.mp4</option>
+                <option value="ct320.ogg">ct320.ogg</option>
+            </select>
+        </div>
+    </div>
+    <div style="float: left;text-align: center;">
+        <div id="container">
+            <canvas id="nav" width="640" height="360"></canvas>
+        </div>
+        <br>
+        <span id="ptitle">Navigation Panel</span>
+    </div>
+</body>
+</html>
